@@ -1,9 +1,26 @@
+# Camera
+PRODUCT_PACKAGES += \
+	Camera
+
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+	Galaxy4 \
+	HoloSpiralWallpaper \
+	NoiseField \
+	PhaseBeam \
+	LiveWallpapers \
+	LiveWallpapersPicker \
+	MagicSmokeWallpapers \
+	VisualizationWallpapers \
+	librs_jni
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# The gps config appropriate for this device
-#$(call inherit-product, device/common/gps/gps_us_supl.mk)
-
 $(call inherit-product-if-exists, vendor/teclast/p76h/p76h-vendor.mk)
+DEVICE := p76h
+VENDOR := teclast
+$(call inherit-product, vendor/$(VENDOR)/$(DEVICE)/$(DEVICE)-vendor-blobs.mk)
+
 
 DEVICE_PACKAGE_OVERLAYS += device/teclast/p76h/overlay
 
@@ -28,8 +45,4 @@ TARGET_BOOTANIMATION_NAME := horizontal-1024x600
 
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-
-DEVICE := p76h
-VENDOR := teclast
-$(call inherit-product, vendor/$(VENDOR)/$(DEVICE)/$(DEVICE)-vendor-blobs.mk)
 
