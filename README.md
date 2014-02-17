@@ -10,4 +10,12 @@ mmc init;mmcinfo;fatload mmc 0:1 82000000 recovery.img;bootm 82000000;
 
 with default settings it does not show anything on screen!
 
-cm itself boots up but does not show gui?!
+cm itself boots up but does not show gui?!a
+
+
+
+HOWTO BUILD:
+1) default cm10-1 setup
+2) curl https://raw.github.com/fishpepper/cm_device_teclast_p76h/manifests/local_manifest.xml > ~/android/system/.repo/local_manifests.xml
+
+
