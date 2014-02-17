@@ -16,6 +16,6 @@ cm itself boots up but does not show gui?!a
 
 HOWTO BUILD:
 1) default cm10-1 setup
-2) curl https://raw.github.com/fishpepper/cm_device_teclast_p76h/manifests/local_manifest.xml > ~/android/system/.repo/local_manifests.xml
+2) curl https://raw.github.com/fishpepper/cm_device_teclast_p76h/manifests/local_manifest.xml > ~/android/system/.repo/local_manifests/teclast_p76h.xml
 
 
