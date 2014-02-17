@@ -31,5 +31,5 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 DEVICE := p76h
 VENDOR := teclast
-$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
+$(call inherit-product, vendor/$(VENDOR)/$(DEVICE)/$(DEVICE)-vendor-blobs.mk)
 
