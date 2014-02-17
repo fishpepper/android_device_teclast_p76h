@@ -29,3 +29,7 @@ TARGET_BOOTANIMATION_NAME := horizontal-1024x600
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
+DEVICE := p76h
+VENDOR := teclast
+$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
+
