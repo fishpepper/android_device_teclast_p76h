@@ -1,4 +1,6 @@
 USE_CAMERA_STUB := true
+BOARD_HAVE_FRONT_CAM := true
+BOARD_HAVE_BACK_CAM := false
 
 # inherit from the proprietary version
 ##-include vendor/teclast/p76h/BoardConfigVendor.mk
@@ -12,6 +14,11 @@ TARGET_CPU_SMP := true
 TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
+BOARD_USES_ALSA_AUDIO := true
+BUILD_WITH_ALSA_UTILS := true
+BOARD_USE_LEGACY_TOUCHSCREEN := true
+#PRODUCT_COPY_FILES += audio.primary.amlogic #is copied with prop files
+PRODUCT_COPY_FILES += device/teclast/p76h/configs/audio_policy.conf:system/etc/audio_policy.conf
 
 #ARCH_ARM_HAVE_VFP := true
 #TARGET_ARCH := arm
@@ -50,6 +57,8 @@ TARGET_RECOVERY_UI_LIB  := librecovery_ui_p76h
 BOARD_USES_UBOOT := true 
 
 TARGET_PROVIDES_INIT_RC := false
+#TARGET_RECOVERY_INITRC := device/teclast/p76h/recovery.init.rc
+
 
 BOARD_EGL_CFG := device/teclast/p76h/egl.cfg
 BOARD_EGL_NEEDS_LEGACY_FB := true
@@ -66,5 +75,5 @@ TARGET_BOOTANIMATION_PRELOAD := true
 
 
 #BOARD_KERNEL_BASE := 0x40000000
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 init=/init loglevel=8 debug
+BOARD_KERNEL_CMDLINE := console=ttyS0,115200in8 init=/init loglevel=8 debug setenv bootargs hdmitx=vdacoff,powermode1,unplug_powerdown a9_clk_max=1200000000
 

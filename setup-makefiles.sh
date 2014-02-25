@@ -24,7 +24,12 @@ MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES := \\
-    $OUTDIR/proprietary/lib/libUMP.so:obj/lib/libUMP.so 
+    $OUTDIR/proprietary/system/lib/libUMP.so:obj/lib/libUMP.so 
+
+#kernel drivers to ramdisk
+PRODUCT_COPY_FILES += \\
+    $OUTDIR/proprietary/boot/ump.ko:root/boot/ump.ko \\
+    $OUTDIR/proprietary/boot/mali.ko:root/boot/mali.ko
 
 PRODUCT_COPY_FILES += \\
 EOF
@@ -36,5 +41,5 @@ for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
     if [ $COUNT = "0" ]; then
         LINEEND=""
     fi
-    echo "    $OUTDIR/proprietary/$FILE:system/$FILE$LINEEND" >> $MAKEFILE
+    echo "    $OUTDIR/proprietary/$FILE:$FILE$LINEEND" >> $MAKEFILE
 done

@@ -18,5 +18,5 @@ $(call inherit-product, device/teclast/p76h/device_p76h.mk)
 PRODUCT_DEVICE := p76h
 PRODUCT_NAME := cm_p76h
 PRODUCT_BRAND := teclast
-PRODUCT_MODEL := p76h
+PRODUCT_MODEL := amlogic
 PRODUCT_MANUFACTURER := teclast
