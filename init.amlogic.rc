@@ -344,12 +344,22 @@ service 720p_to_1080p /system/bin/reset_display_mode.sh 1080p 720p
 #    oneshot
 
 
-#service wpa_supplicant /system/bin/wpa_supplicant -iwlan0 -Dnl80211 -c /data/misc/wifi/wpa_supplicant.conf
-#    class main
-#    socket wpa_wlan0 dgram 0666 system wifi
-#    group system wifi
-#    disabled
-#    oneshot
+service wpa_supplicant /system/bin/wpa_supplicant -iwlan0 -Dnl80211 -c /data/misc/wifi/wpa_supplicant.conf
+    class main
+    socket wpa_wlan0 dgram 0666 system wifi
+    group system wifi
+    disabled
+    oneshot
+
+service dhcpd_wlan0 /system/bin/dhcpd -aABKL
+    class main
+    disabled
+    oneshot
+
+service iprenew_wlan0 /system/bin/hdcpd -n
+    class main 
+    disabled
+    oneshot
 
 	
 #on property:dev.bootcomplete=1

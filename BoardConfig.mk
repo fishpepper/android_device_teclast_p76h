@@ -15,6 +15,7 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 BOARD_USES_ALSA_AUDIO := true
+BOARD_HAVE_BLUETOOH := false
 BUILD_WITH_ALSA_UTILS := true
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 #PRODUCT_COPY_FILES += audio.primary.amlogic #is copied with prop files
@@ -68,7 +69,7 @@ ENABLE_WEBGL := true
 
 # CWM
 #TARGET_RECOVERY_INITRC := device/ainol/elf2/recovery.init.rc
-#BOARD_HAS_NO_SELECT_BUTTON := true
+BOARD_HAS_NO_SELECT_BUTTON := true
 #BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 
 TARGET_BOOTANIMATION_PRELOAD := true
@@ -76,4 +77,21 @@ TARGET_BOOTANIMATION_PRELOAD := true
 
 #BOARD_KERNEL_BASE := 0x40000000
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200in8 init=/init loglevel=8 debug setenv bootargs hdmitx=vdacoff,powermode1,unplug_powerdown a9_clk_max=1200000000
+
+
+#wifi
+WIFI_DRIVER_MODULE_PATH := "/system/lib/8188eu.ko"
+WIFI_DRIVER_MODULE_NAME := "8188eu"
+WIFI_DRIVER_FW_PATH_STA := none
+WIFI_DRIVER_MODULE_ARG := "ifname=wlan0 if2name=p2p0"
+
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+CONFIG_DRIVER_WEXT := y
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_rtl
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_rtl
+BOARD_WLAN_DEVICE := rtl8189es
+
+
 

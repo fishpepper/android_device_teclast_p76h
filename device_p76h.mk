@@ -20,6 +20,10 @@ PRODUCT_PACKAGES += \
 	libaudioutils \
 	libtinyalsa
 
+#wifi
+PRODUCT_PACKAGES += \
+ 	wpa_supplicant.conf
+
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product-if-exists, vendor/teclast/p76h/p76h-vendor.mk)
@@ -50,6 +54,21 @@ PRODUCT_COPY_FILES += \
 
 ###$(call inherit-product, build/target/product/full.mk)
 
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+    frameworks/native/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml 
+    #frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    #frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+    #packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
+
+DEVICE_PACKAGE_OVERLAYS := devic
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -66,6 +85,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  ro.sf.lcd_density=160
 #adb
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.usb.config=adb 
 PRODUCT_PROPERTY_OVERRIDES += ro.hardware=amlogic
+PRODUCT_PROPERTY_OVERRIDES += wifi.interface=wlan0
 
 #fixed gl rev for angry birds etc
 PRODUCT_PROPERTY_OVERRIDES += ro.opengles.version=131072 
