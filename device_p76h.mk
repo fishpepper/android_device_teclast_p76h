@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
 
 #wifi
 PRODUCT_PACKAGES += \
- 	wpa_supplicant.conf
+ 	wpa_supplicant.conf \
+	libnetcmdiface
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
