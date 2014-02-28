@@ -83,7 +83,7 @@ BOARD_KERNEL_CMDLINE := console=ttyS0,115200in8 init=/init loglevel=8 debug sete
 # Wifi
 WIFI_DRIVER := rtl8188eu
 BOARD_WIFI_VENDOR := realtek
-BOARD_WLAN_DEVICE := rtl8189es
+BOARD_WLAN_DEVICE := rtl8188eu
 WIFI_DRIVER_MODULE_PATH := /system/lib/8188eu.ko
 WIFI_DRIVER_MODULE_NAME := 8188eu
 
@@ -99,6 +99,4 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_rtl
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_rtl
 
-
-
-
+include $(call all-subdir-makefiles)
