@@ -1,3 +1,3 @@
 touch.deviceType = touchScreen
-touch.orientationAware = 0
+touch.orientationAware = 1
 
