@@ -12,8 +12,7 @@ PRODUCT_PACKAGES += \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
 	VisualizationWallpapers \
-	librs_jni \
-	libnetcmdiface
+	librs_jni 
 
 #sound
 PRODUCT_PACKAGES += \

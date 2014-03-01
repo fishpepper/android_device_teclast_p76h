@@ -79,14 +79,16 @@ TARGET_BOOTANIMATION_PRELOAD := true
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200in8 init=/init loglevel=8 debug setenv bootargs hdmitx=vdacoff,powermode1,unplug_powerdown a9_clk_max=1200000000
 
 
-#wifi
 # Wifi
+BOARD_HAVE_WIFI := true
 WIFI_DRIVER := rtl8188eu
 BOARD_WIFI_VENDOR := realtek
 BOARD_WLAN_DEVICE := rtl8188eu
 WIFI_DRIVER_MODULE_PATH := /system/lib/8188eu.ko
 WIFI_DRIVER_MODULE_NAME := 8188eu
+WIFI_FIRMWARE_DRIVER := ""
 
+WIFI_DRIVER_FW_PATH_PARAM := ""
 WIFI_DRIVER_FW_PATH_AP := none
 WIFI_DRIVER_FW_PATH_P2P := none
 WIFI_DRIVER_FW_PATH_STA := none
