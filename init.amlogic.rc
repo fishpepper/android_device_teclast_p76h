@@ -1,8 +1,6 @@
 on early-init
     #hack to add wifi driver.. why does cm not load it itself?!
     insmod /system/lib/8188eu.ko "ifname=wlan0 if2name=p2p0"
-    #dirty hack to set hw version, my setting in props is ignored?!
-    setprop ro.hardware amlogic
     write /sys/class/boot_monitor/boot_timer 1
     #symlink /initlogo.rle.bak /initlogo.rle
     write /sys/class/graphics/fb0/blank 0
