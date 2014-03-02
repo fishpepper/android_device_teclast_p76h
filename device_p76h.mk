@@ -49,11 +49,11 @@ PRODUCT_COPY_FILES += \
 PROPRIETARY_DIR := vendor/$(VENDOR)/$(DEVICE)/proprietary
 CUSTOM_RO_HW := "amlogicmeson6yuken72acustomerpl"
 PRODUCT_COPY_FILES := \
-	$(PROPRIETARY_DIR)/system/lib/hw/audio.primary.amlogic.so:system/lib/hw/audio.primary.$(CUSTOM_RO_HW).so
-        $(PROPRIETARY_DIR)/system/lib/hw/camera.amlogic.so:system/lib/hw/camera.$(CUSTOM_RO_HW).so
-        $(PROPRIETARY_DIR)/system/lib/hw/hwcomposer.amlogic.so:system/lib/hw/hwcomposer.$(CUSTOM_RO_HW).so
-        $(PROPRIETARY_DIR)/system/lib/hw/lights.amlogic.so:system/lib/hw/lights.$(CUSTOM_RO_HW).so
-        $(PROPRIETARY_DIR)/system/lib/hw/sensors.amlogic.so:system/lib/hw/sensors.$(CUSTOM_RO_HW).so
+	$(PROPRIETARY_DIR)/system/lib/hw/audio.primary.amlogic.so:system/lib/hw/audio.primary.$(CUSTOM_RO_HW).so \
+        $(PROPRIETARY_DIR)/system/lib/hw/camera.amlogic.so:system/lib/hw/camera.$(CUSTOM_RO_HW).so \
+        $(PROPRIETARY_DIR)/system/lib/hw/hwcomposer.amlogic.so:system/lib/hw/hwcomposer.$(CUSTOM_RO_HW).so \
+        $(PROPRIETARY_DIR)/system/lib/hw/lights.amlogic.so:system/lib/hw/lights.$(CUSTOM_RO_HW).so \
+        $(PROPRIETARY_DIR)/system/lib/hw/sensors.amlogic.so:system/lib/hw/sensors.$(CUSTOM_RO_HW).so 
 
 PRODUCT_COPY_FILES += \
     device/teclast/p76h/init.amlogic.rc:root/init.amlogicmeson6yuken72acustomerpl.rc
@@ -94,7 +94,7 @@ PRODUCT_PROPERTY_OVERRIDES +=  ro.sf.lcd_density=160
 
 #adb
 PRODUCT_PROPERTY_OVERRIDES += persist.sys.usb.config=adb 
-PRODUCT_PROPERTY_OVERRIDES += ro.hardware=amlogic
+#PRODUCT_PROPERTY_OVERRIDES += ro.hardware=amlogic #does not work
 PRODUCT_PROPERTY_OVERRIDES += wifi.interface=wlan0
 
 #fixed gl rev for angry birds etc
