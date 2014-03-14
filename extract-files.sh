@@ -35,5 +35,8 @@ done
 extract_file "/boot/mali.ko" "$BASE/boot/mali.ko"
 extract_file "/boot/ump.ko" "$BASE/boot/ump.ko"
 
+#fetch firmware for wifi from net, i do not have mine backed up
+#curl https://github.com/lwfinger/rtl8188eu/blob/master/rtl8188eufw.bin -o $BASE/system/lib/rtl8188eufw.bin
+
 ./setup-makefiles.sh
 

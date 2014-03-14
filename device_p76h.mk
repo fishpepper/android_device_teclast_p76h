@@ -44,17 +44,6 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
-# we can not set ro.hardware, it defaults to amlogicmeson6yuken72acustomerpl on my tablet
-# therefore we manually copy the files:
-PROPRIETARY_DIR := vendor/$(VENDOR)/$(DEVICE)/proprietary
-CUSTOM_RO_HW := "amlogicmeson6yuken72acustomerpl"
-PRODUCT_COPY_FILES := \
-	$(PROPRIETARY_DIR)/system/lib/hw/audio.primary.amlogic.so:system/lib/hw/audio.primary.$(CUSTOM_RO_HW).so \
-        $(PROPRIETARY_DIR)/system/lib/hw/camera.amlogic.so:system/lib/hw/camera.$(CUSTOM_RO_HW).so \
-        $(PROPRIETARY_DIR)/system/lib/hw/hwcomposer.amlogic.so:system/lib/hw/hwcomposer.$(CUSTOM_RO_HW).so \
-        $(PROPRIETARY_DIR)/system/lib/hw/lights.amlogic.so:system/lib/hw/lights.$(CUSTOM_RO_HW).so \
-        $(PROPRIETARY_DIR)/system/lib/hw/sensors.amlogic.so:system/lib/hw/sensors.$(CUSTOM_RO_HW).so 
-
 PRODUCT_COPY_FILES += \
     device/teclast/p76h/init.amlogic.rc:root/init.amlogicmeson6yuken72acustomerpl.rc
 
