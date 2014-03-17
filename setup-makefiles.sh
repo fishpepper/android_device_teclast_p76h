@@ -34,6 +34,10 @@ PRODUCT_COPY_FILES += \\
 PRODUCT_COPY_FILES += \\
 EOF
 
+#cam blob tested
+echo "    $OUTDIR/proprietary/system/lib/hw/camera.amlogic.so:system/lib/hw/camera.amlogicmeson6yuken72acustomerpl.so \\" >> $MAKEFILE
+
+
 LINEEND=" \\"
 COUNT=`cat proprietary-files.txt | grep -v ^# | grep -v ^$ | wc -l | awk {'print $1'}`
 for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
@@ -44,3 +48,5 @@ for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
     fi
     echo "    $OUTDIR/proprietary/$FILE:$FILEOUT$LINEEND" >> $MAKEFILE
 done
+
+
