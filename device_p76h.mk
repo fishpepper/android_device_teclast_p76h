@@ -45,7 +45,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 PRODUCT_COPY_FILES += \
-    device/teclast/p76h/init.amlogic.rc:root/init.amlogicmeson6yuken72acustomerpl.rc
+    device/teclast/p76h/init.amlogic.rc:root/init.amlogicmeson6yuken72acustomerpl.rc \
+    device/teclast/p76h/ueventd.amlogic.rc:root/ueventd.amlogicmeson6yuken72acustomerpl.rc 
 
 #ts idc
 PRODUCT_COPY_FILES += \

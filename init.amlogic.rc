@@ -223,7 +223,10 @@ on boot
     ##this_is_done_in_cm_init##mkdir /data/misc/wifi 0770 wifi wifi
     ##this_is_done_in_cm_init##chmod 0660 /data/misc/wifi/wpa_supplicant.conf 
     #ugly hack
-    chmod 0777 /data/misc/wifi
+    mkdir /data/misc/wifi
+    chmod 0770 /data/misc/wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    chmod 0770 /data/misc/wifi/*
 
     #mkdir /system/etc/wifi 0770 wifi wifi
     #chmod 0770 /system/etc/wifi
@@ -240,7 +243,7 @@ on boot
 
     #camera
     mkdir /data/misc/camera 0770 media media
-    chown media media /dev/video*
+    ###done in uevent.amlogic.rc##chown media media /dev/video*
 
     # GPS com and pesudo com ports
     symlink /dev/ttyS1 /dev/ttyS10
