@@ -19,3 +19,7 @@ system/lib/hw/power.default.so
 system/lib/libamavutils.so
 #system/lib/libwpa_client.so
 system/lib/8188eu.ko
+#sensors
+system/lib/libmlplatform.so
+system/lib/libmplmpu.so
+system/lib/libmllite.so

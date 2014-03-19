@@ -36,6 +36,9 @@ EOF
 
 #cam blob tested
 echo "    $OUTDIR/proprietary/system/lib/hw/camera.amlogic.so:system/lib/hw/camera.amlogicmeson6yuken72acustomerpl.so \\" >> $MAKEFILE
+echo "    $OUTDIR/proprietary/system/lib/hw/sensors.amlogic.so:system/lib/hw/sensors.amlogicmeson6yuken72acustomerpl.so \\" >> $MAKEFILE
+echo "    $OUTDIR/proprietary/system/lib/hw/lights.amlogic.so:system/lib/hw/lights.amlogicmeson6yuken72acustomerpl.so \\" >> $MAKEFILE
+
 
 
 LINEEND=" \\"
