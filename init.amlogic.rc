@@ -243,7 +243,6 @@ on boot
 
     #camera
     mkdir /data/misc/camera 0770 media media
-    ###done in uevent.amlogic.rc##chown media media /dev/video*
 
     # GPS com and pesudo com ports
     symlink /dev/ttyS1 /dev/ttyS10
@@ -407,7 +406,8 @@ service iprenew_p2p /system/bin/dhcpcd -n
    oneshot
 
 	
-#on property:dev.bootcomplete=1
+on property:dev.bootcomplete=1
+     chown media media /dev/video*
 #    chown media media /sys/class/vm/mirror
 #    chmod 0664 /sys/class/vm/mirror
 #    write /sys/class/vm/mirror 0
