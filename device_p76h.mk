@@ -51,6 +51,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/teclast/p76h/goodix_gt811.idc:system/usr/idc/goodix_gt811.idc
 
+PRODUCT_COPY_FILES += \
+    device/teclast/p76h/etc/vold.fstab:system/etc/vold.fstab
+
 ###$(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_COPY_FILES += \

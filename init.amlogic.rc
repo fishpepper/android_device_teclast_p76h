@@ -15,15 +15,16 @@ on init
     export INTERNAL_STORAGE /sdcard
     #export BOOTCLASSPATH /system/framework/core.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/framework2.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar
 
-    #mkdir /storage 0750 root sdcard_r
-    #symlink /storage/sdcard0 /sdcard
-    #symlink /storage/sdcard0 /mnt/sdcard
-
+    mkdir /storage 0750 root sdcard_r
+    mkdir /storage/sdcard0 0750 root sdcard_r
+    symlink /storage/sdcard0 /sdcard
+    symlink /storage/sdcard0 /mnt/sdcard
+    symlink /storage/sdcard0/external_sdcard /sd-ext 
 
 
 on fs
-    mount vfat /dev/block/media /sdcard rw noatime nodiratime norelatime  nosuid 
-    mount vfat /dev/block/cardblksd8 /sd-ext  rw noatime nodiratime norelatime  nosuid 
+    #mount vfat /dev/block/media /sdcard rw noatime nodiratime norelatime  nosuid 
+    #mount vfat /dev/block/cardblksd8 /sd-ext  rw noatime nodiratime norelatime  nosuid 
 
 on post-fs-data
     mkdir /dev/console
