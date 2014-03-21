@@ -1,2 +1,2 @@
 dev_mount sdcard /storage/sdcard0/external_sdcard auto /devices/platform/AMLOGIC_CARD/card_host/memorycard0 
-dev_mount flash /storage/sdcard0 auto /devices/platform/mtd/mtd6
+dev_mount flash /storage/sdcard0 auto /devices/platform/mtd/mtd7
